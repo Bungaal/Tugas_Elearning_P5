@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #errorMessage {
+            display: none; /* Initially hide the error message */
+        }
+        
+        #errorMessage.show {
+            display: block; /* Show error message when 'show' class is added */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Register</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Buat Username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+                    <div id="errorMessage" class="text-danger">Email sudah terpakai</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Buat Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Daftar</button>
+                <p class="text-center mt-3">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || []; // Get registered users from localStorage
+
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Reset error message
+        errorMessage.classList.remove('show');
+
+        // Check if the email is already registered
+        if (registeredUsers.some(user => user.email === email)) {
+            errorMessage.classList.add('show'); // Show error message
+        } else {
+            registeredUsers.push({ username, email, password }); // Add new user
+            localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers)); // Save to localStorage
+            alert('Registrasi berhasil! Silakan login.'); // Show success message
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+    });
+</script>
+</body>
+</html>

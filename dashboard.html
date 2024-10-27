@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Utama - Toko Kue Fleur de Sucre</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .navbar {
+            background-color: rgba(255, 189, 222, 0.9);
+            padding: 0.5rem 1rem; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .navbar-brand {
+            font-family: 'Lobster', cursive;
+            font-size: 1.3rem; 
+            color: #fff;
+        }
+        .nav-link {
+            color: #fff !important;
+            font-size: 0.9rem; 
+        }
+        .container {
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        Fleur de Sucre
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#products">Produk</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#orders">Pesanan Saya</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#profile">Profil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="text-center mt-4">Selamat Datang</h1>
+    <p class="text-center">Kami senang Anda berada di sini! Jelajahi produk kami dan nikmati pengalaman berbelanja Anda.</p>
+
+    <div class="row mt-5" id="products">
+        <h2 class="text-center w-100">Produk Kami</h2>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/cake1.jpeg" class="card-img-top" alt="Kue 1">
+                <div class="card-body">
+                    <h5 class="card-title">Kue Cokelat</h5>
+                    <p class="card-text">Kue cokelat lezat dengan lapisan krim.</p>
+                    <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/cake2.jpeg" class="card-img-top" alt="Kue 2">
+                <div class="card-body">
+                    <h5 class="card-title">Kue Vanila</h5>
+                    <p class="card-text">Kue vanila yang lembut dan nikmat.</p>
+                    <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/cake3.jpeg" class="card-img-top" alt="Kue 3">
+                <div class="card-body">
+                    <h5 class="card-title">Kue Red Velvet</h5>
+                    <p class="card-text">Kue red velvet dengan cream cheese frosting.</p>
+                    <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-5" id="orders">
+        <h2 class="text-center w-100">Pesanan Saya</h2>
+        <p class="text-center">Cek status pesanan Anda di sini.</p>
+        
+    </div>
+    
+        <div class="row mt-5" id="profile">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center">Profil Pengguna</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Nama Pengguna</label>
+                        <input type="text" class="form-control" id="username" placeholder="Nama Pengguna" value="Bunga Aliyya Lestari">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" value="bungaaliyya@example.com">
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Fleur de Sucre. Semua hak dilindungi.</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
